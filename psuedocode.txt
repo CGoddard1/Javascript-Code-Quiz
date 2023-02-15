@@ -1,0 +1,43 @@
+
+Index.HTML
+Build out with html first - elements on page
+View highscores.html link
+    link with A tags that links to  highscores.html
+main title - Coding Quiz Challenge
+Subtitle: - picture in slack
+A start button
+    on clock   
+        begins timer
+        shows the first question
+        modifies some html content
+            replace the title and subtitle with a question and some answers
+A timer in the top right
+    starts ticking down when we hit the start button
+    go back to JS code from in class timer
+Question -> list of buttons with answers
+    click a button:
+        determine whether its the right or wrong answer
+        if it's right -> add a congrats or success
+        otherwise:
+            if it's wrong, lose time on the timer and show the word "incorrect answer"
+        In both cases: move on to next question
+
+
+highscores.html
+ordered list of high scores
+    initials and a number
+    number is how much time is left when you finish the quiz
+
+
+Data
+    questions
+        array of questions + answers
+        question itself is a string
+        answers are an array of strings
+        the correct answer can be a string or an index
+            the correct answer is "index 1" or "index 2"
+        all of this is encapsulated in object {}
+        
+        **** all information related to a single question needs to be stored together
+
+
