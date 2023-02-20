@@ -59,9 +59,9 @@ var score = 0;
 var questionIndex = 0;
 
 var currentTime = document.querySelector("#currentTime");
-var timer = document.querySelector(".btn btn-start");
+var timer = document.querySelector(".btn-start");
 var questionsDiv = document.querySelector("#questionsDiv");
-var wrapper = document.querySelector("#wrap2");
+var wrapper = document.querySelector(".container");
 
 //timer element with total seconds
 var secondsLeft = 75;
@@ -74,18 +74,18 @@ var ulCreate = document.createElement("ul");
 
 timer.addEventListener("click", function () {
     if (holdInterval === 0) {
-        holdInterval = setInterval(funtion() {
+        holdInterval = setInterval(function () {
             secondsLeft--;
-        currentTime.textContent = "Time: " + secondsLeft;
+            currentTime.textContent = "Time: " + secondsLeft;
 
-        if (secondsLeft <= 0) {
-            clearInterval(holdInterval);
-            allDone();
-            currentTime.textContent = "Game Over";
-        }
-    }, 1250);
+            if (secondsLeft <= 0) {
+                clearInterval(holdInterval);
+                allDone();
+                currentTime.textContent = "Game Over!";
+            }
+        }, 1000);
     }
-render(questionIndex);
+    render(questionIndex);
 });
 //renders questions and choices to page
 function render(questionIndex) {
