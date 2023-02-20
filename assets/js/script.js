@@ -26,6 +26,7 @@ var questions = [
     
 ];
 
+// Array with questions and answers
 var questions = [
     {
         question: "Commonly used data types DO NOT include:",
@@ -52,4 +53,21 @@ var questions = [
         choices: ["Javascript", "terminal / bash", "for loops", "console log"],
         answer: "console log"
     }
-]
+];
+//variables
+var score = 0;
+var questionIndex = 0;
+
+var currentTime = document.querySelector("#currentTime");
+var timer = document.querySelector(".btn-start");
+var questions = document.querySelector("#questions");
+var wrapper = document.querySelector("#wrap2");
+
+//timer element with total seconds
+var secondsLeft = 75;
+//interval hold time
+var holdInterval = 0;
+//10 second penalty for wrong questions
+var penalty = 10;
+//new element for unordered list property
+var ulCreate = document.createElement("ul");
