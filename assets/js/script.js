@@ -1,30 +1,30 @@
-//selects time
-var timeEl = document.querySelector("#currentTime");
-var secondsLeft = 75;
+// //selects time
+// var timeEl = document.querySelector("#currentTime");
+// var secondsLeft = 75;
 
-function setTime() {
-    var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timeEl.textContent = secondsLeft + " Time Left ";
+// function setTime() {
+//     var timerInterval = setInterval(function() {
+//         secondsLeft--;
+//         timeEl.textContent = secondsLeft + " Time Left ";
 
-        if(secondsLeft === 0) {
-            clearInterval(timerInterval);
-            sendMessage();
-        }
-    }, 1250);
-}
-//function to create message that game is over
-function sendMessage() {
-    timeEl.textContent = "GAME OVER ";
-}
-setTime();
+//         if(secondsLeft === 0) {
+//             clearInterval(timerInterval);
+//             sendMessage();
+//         }
+//     }, 1250);
+// }
+// //function to create message that game is over
+// function sendMessage() {
+//     timeEl.textContent = "GAME OVER ";
+// }
+// setTime();
 
-var questions = [
-    "one",
-    "two",
-    "three",
+// var questions = [
+//     "one",
+//     "two",
+//     "three",
     
-];
+// ];
 
 // Array with questions and answers
 var questions = [
@@ -59,8 +59,8 @@ var score = 0;
 var questionIndex = 0;
 
 var currentTime = document.querySelector("#currentTime");
-var timer = document.querySelector(".btn-start");
-var questions = document.querySelector("#questions");
+var timer = document.querySelector(".btn btn-start");
+var questionsDiv = document.querySelector("#questionsDiv");
 var wrapper = document.querySelector("#wrap2");
 
 //timer element with total seconds
@@ -71,3 +71,40 @@ var holdInterval = 0;
 var penalty = 10;
 //new element for unordered list property
 var ulCreate = document.createElement("ul");
+
+timer.addEventListener("click", function() {
+    if (holdInterval === 0) {
+        holdInterval = setInterval(funtion () {
+            secondsLeft--;
+            currentTime.textContent = "Time: " + secondsLeft;
+
+            if (secondsLeft <= 0) {
+                clearInterval(holdInterval);
+                allDone();
+                currentTime.textContent = "Game Over";
+            }
+        }, 1250);
+    }
+    render(questionIndex);
+});
+//renders questions and choices to page
+function render(questionIndex) {
+    //clears existing data
+    questionsDiv.innerHTML = "";
+    ulCreate.innerHTML = "";
+    // for loops to loop through all info in array
+    for (var i = 0; i <questions.length; i++) {
+        //appends question title only
+        var userQuestion = questions[questionIndex].title;
+        var userChoices = questions[questionIndex].choices;
+        questionsDiv.textContent = userQuestion;
+    }
+    // new choices for each for loop
+    userChoices.forEach(function (newItem) {
+        var listItem = document.createElement("li");
+        listItem.textContent = newItem;
+        questionsDiv.appendChild(ulCreate);
+        ulCreate.appendChild(listItem);
+        listItem.addEventListener("click", (compare));
+    })
+}
