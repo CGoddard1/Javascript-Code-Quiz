@@ -1,6 +1,6 @@
 var highScore = document.querySelector("#highScore");
-var clear = document.querySelector("#clear");
-var goBack = document.querySelector("#goBack");
+var clear = document.querySelector(".btn-clear");
+var goBack = document.querySelector(".btn-back");
 
 // Event listener to clear scores 
 clear.addEventListener("click", function () {
@@ -25,3 +25,5 @@ if (allScores !== null) {
 goBack.addEventListener("click", function () {
     window.location.replace("./index.html");
 });
+
+console.log();

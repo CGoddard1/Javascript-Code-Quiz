@@ -1,40 +1,12 @@
-// //selects time
-// var timeEl = document.querySelector("#currentTime");
-// var secondsLeft = 75;
-
-// function setTime() {
-//     var timerInterval = setInterval(function() {
-//         secondsLeft--;
-//         timeEl.textContent = secondsLeft + " Time Left ";
-
-//         if(secondsLeft === 0) {
-//             clearInterval(timerInterval);
-//             sendMessage();
-//         }
-//     }, 1250);
-// }
-// //function to create message that game is over
-// function sendMessage() {
-//     timeEl.textContent = "GAME OVER ";
-// }
-// setTime();
-
-// var questions = [
-//     "one",
-//     "two",
-//     "three",
-
-// ];
-
 // Array with questions and answers
 var questions = [
     {
-        question: "Commonly used data types DO NOT include:",
+        title: "Commonly used data types DO NOT include:",
         choices: ["strings", "booleans", "alerts", "numbers"],
         answer: "alerts"
     },
     {
-        question: "The condition in an if / else statement is enclosed within ____.",
+        title: "The condition in an if / else statement is enclosed within ____.",
         choices: ["quotes", "curly brackets", "parantheses", "square brackets"],
         answer: "parantheses"
     },
@@ -165,7 +137,7 @@ function allDone() {
     }
     //label
     var createLabel = document.createElement("label");
-    createLabel.setAttricbute("id", "createLabel");
+    createLabel.setAttribute("id", "createLabel");
     createLabel.textContent = "Enter your Initials: ";
 
     questionsDiv.appendChild(createLabel);
@@ -207,7 +179,8 @@ function allDone() {
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
             //travels to final page
-            window.location.replace("/.highscores.html");
+            window.location.replace("./highscores.html");
         }
     });
 }
+console.log();
