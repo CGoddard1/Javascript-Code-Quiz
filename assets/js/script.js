@@ -73,7 +73,7 @@ function render(questionIndex) {
     }
     // new choices for each for loop
     userChoices.forEach(function (newItem) {
-        var listItem = document.createElement("li");
+        var listItem = document.createElement("button");
         listItem.textContent = newItem;
         questionsDiv.appendChild(ulCreate);
         ulCreate.appendChild(listItem);
@@ -84,7 +84,7 @@ function render(questionIndex) {
 function compare(event) {
     var element = event.target;
 
-    if (element.matches("li")) {
+    if (element.matches("button")) {
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
         //correct condition
